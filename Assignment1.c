@@ -44,10 +44,13 @@ getSUM(sum);
 close(pipefds[0]); //close read fd
 write(pipefds[1], sum, SUM_LENGTH + 1); //write PIN to pipe
 
-printf("Enter Name:....\n");
+printf("Enter your Name:\n");
 fgets(str, 50, stdin);
+printf("\nYou entered: %s\n\n", str);
+  
 printf("Generating output from parent and sending to child...\n");
-//sleep(SUM_WAIT_INTERVAL); //delaying PIN generation intentionally
+  
+sleep(SUM_WAIT_INTERVAL); //delaying PIN generation intentionally
 
 exit(EXIT_SUCCESS);
 }
